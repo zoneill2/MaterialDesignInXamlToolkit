@@ -11,6 +11,7 @@
   <UserControl.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Carousel.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
@@ -584,6 +585,22 @@
         </smtx:XamlDisplay>
       </StackPanel>
     </WrapPanel>
+
+    <TextBlock Style="{StaticResource PageTitleTextBlock}" Text="Carousel"/>
+
+    <materialDesign:Carousel BorderBrush="Gray" BorderThickness="2" Height="200" IsDefaultButtonVisible="True" Orientation="Horizontal">
+      <TextBlock Text="test"/>
+      <materialDesign:CarouselItem>
+        <materialDesign:CarouselItem>
+          <TextBlock Text="test" Background="Green"/>
+        </materialDesign:CarouselItem>
+      </materialDesign:CarouselItem>
+      <materialDesign:CarouselItem>
+        <StackPanel Background="Orange">
+          <TextBlock Text="Page 2"/>
+        </StackPanel>
+      </materialDesign:CarouselItem>
+    </materialDesign:Carousel>
   </StackPanel>
 </UserControl>
 
