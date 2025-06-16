@@ -119,7 +119,7 @@ namespace MaterialDesignThemes.Wpf
             var container = (FrameworkElement)ItemContainerGenerator.ContainerFromIndex(index);
             if(container == null) return;
 
-            var endPosition = (_scrollViewer.HorizontalOffset + ActualWidth) >= (ActualWidth * Items.Count) ? 0 : _scrollViewer.HorizontalOffset + ActualWidth;
+            var endPosition = _scrollViewer.HorizontalOffset <= (index * ActualWidth) ? index * ActualWidth : 0;
 
             var animation = new DoubleAnimation
             {
@@ -142,7 +142,7 @@ namespace MaterialDesignThemes.Wpf
             var container = (FrameworkElement)ItemContainerGenerator.ContainerFromIndex(index);
             if(container == null) return;
 
-            var endPosition = (_scrollViewer.VerticalOffset + ActualHeight) >= (ActualHeight * Items.Count) ? 0 : _scrollViewer.VerticalOffset + ActualHeight;
+            var endPosition = _scrollViewer.VerticalOffset <= (index * ActualHeight) ? index * ActualHeight : 0;
 
             var animation = new DoubleAnimation
             {

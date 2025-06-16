@@ -598,7 +598,7 @@
         <TextBlock Text="Horizontal"/>
         <materialDesign:Carousel BorderBrush="{DynamicResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Horizontal">
           <materialDesign:CarouselItem>
-            <TextBlock Text="test" Background="LightGreen"/>
+            <TextBlock Text="Page 1" Background="LightGreen"/>
           </materialDesign:CarouselItem>
           <materialDesign:CarouselItem>
             <StackPanel Background="DeepSkyBlue">
@@ -607,7 +607,7 @@
           </materialDesign:CarouselItem>
           <materialDesign:CarouselItem>
             <StackPanel Background="Salmon">
-              <TextBlock Text="Page 2"/>
+              <TextBlock Text="Page 3"/>
             </StackPanel>
           </materialDesign:CarouselItem>
         </materialDesign:Carousel>
@@ -617,7 +617,7 @@
         <TextBlock Text="Vertical"/>
         <materialDesign:Carousel BorderBrush="{StaticResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Vertical">
           <materialDesign:CarouselItem>
-            <TextBlock Text="test" Background="LightGreen"/>
+            <TextBlock Text="Page 1" Background="LightGreen"/>
           </materialDesign:CarouselItem>
           <materialDesign:CarouselItem>
             <StackPanel Background="DeepSkyBlue">
@@ -626,7 +626,7 @@
           </materialDesign:CarouselItem>
           <materialDesign:CarouselItem>
             <StackPanel Background="Salmon">
-              <TextBlock Text="Page 2"/>
+              <TextBlock Text="Page 3"/>
             </StackPanel>
           </materialDesign:CarouselItem>
         </materialDesign:Carousel>

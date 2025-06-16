@@ -102,7 +102,7 @@
                       HorizontalAlignment="Center"
                       Panel.ZIndex="1"
                       Content="{wpf:PackIcon Kind=ArrowDownBold}"
-                      Command="{x:Static wpf:Carousel.TransitionBackwardCommand}">
+                      Command="{x:Static wpf:Carousel.TransitionForwardCommand}">
                 <Button.Style>
                   <Style BasedOn="{StaticResource CarouselButtonStyle}" TargetType="{x:Type Button}">
                     <Style.Triggers>
