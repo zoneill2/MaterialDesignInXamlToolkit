@@ -5,7 +5,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
-             d:DesignHeight="1080"
+             d:DesignHeight="1280"
              d:DesignWidth="1200"
              mc:Ignorable="d">
   <UserControl.Resources>
@@ -586,21 +586,52 @@
       </StackPanel>
     </WrapPanel>
 
-    <TextBlock Style="{StaticResource PageTitleTextBlock}" Text="Carousel"/>
+    <Rectangle Style="{StaticResource PageSectionSeparator}" />
+    
+    <StackPanel>
+      <TextBlock Style="{StaticResource PageTitleTextBlock}" Text="Carousel"/>
+    </StackPanel>
 
-    <materialDesign:Carousel BorderBrush="Gray" BorderThickness="2" Height="200" IsDefaultButtonVisible="True" Orientation="Horizontal">
-      <TextBlock Text="test"/>
-      <materialDesign:CarouselItem>
-        <materialDesign:CarouselItem>
-          <TextBlock Text="test" Background="Green"/>
-        </materialDesign:CarouselItem>
-      </materialDesign:CarouselItem>
-      <materialDesign:CarouselItem>
-        <StackPanel Background="Orange">
-          <TextBlock Text="Page 2"/>
-        </StackPanel>
-      </materialDesign:CarouselItem>
-    </materialDesign:Carousel>
+
+    <UniformGrid>
+      <StackPanel Margin="25,0">
+        <TextBlock Text="Horizontal"/>
+        <materialDesign:Carousel BorderBrush="{DynamicResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Horizontal">
+          <materialDesign:CarouselItem>
+            <TextBlock Text="test" Background="LightGreen"/>
+          </materialDesign:CarouselItem>
+          <materialDesign:CarouselItem>
+            <StackPanel Background="DeepSkyBlue">
+              <TextBlock Text="Page 2"/>
+            </StackPanel>
+          </materialDesign:CarouselItem>
+          <materialDesign:CarouselItem>
+            <StackPanel Background="Salmon">
+              <TextBlock Text="Page 2"/>
+            </StackPanel>
+          </materialDesign:CarouselItem>
+        </materialDesign:Carousel>
+      </StackPanel>
+
+      <StackPanel Margin="25,0">
+        <TextBlock Text="Vertical"/>
+        <materialDesign:Carousel BorderBrush="{StaticResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Vertical">
+          <materialDesign:CarouselItem>
+            <TextBlock Text="test" Background="LightGreen"/>
+          </materialDesign:CarouselItem>
+          <materialDesign:CarouselItem>
+            <StackPanel Background="DeepSkyBlue">
+              <TextBlock Text="Page 2"/>
+            </StackPanel>
+          </materialDesign:CarouselItem>
+          <materialDesign:CarouselItem>
+            <StackPanel Background="Salmon">
+              <TextBlock Text="Page 2"/>
+            </StackPanel>
+          </materialDesign:CarouselItem>
+        </materialDesign:Carousel>
+      </StackPanel>
+    </UniformGrid>
   </StackPanel>
 </UserControl>
 

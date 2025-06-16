@@ -55,7 +55,7 @@ namespace MaterialDesignThemes.Wpf
                 nameof(SelectedIndex),      
                 typeof(int),           
                 typeof(Carousel),       
-                new PropertyMetadata(default(int)));
+                new PropertyMetadata(0));
 
         public int SelectedIndex
         {
@@ -83,17 +83,21 @@ namespace MaterialDesignThemes.Wpf
 
         private void TransitionForwardHandler(object sender, RoutedEventArgs e)
         {
-            if (_scrollViewer != null)
+            if (_scrollViewer == null)
                 return;
+            var indexBefore = SelectedIndex;
             SelectedIndex = (SelectedIndex + 1) % Items.Count;
+
+            Transition(SelectedIndex, Orientation);
         }
 
         private void TransitionBackwardHandler(object sender, RoutedEventArgs e)
         {
-            if (_scrollViewer != null)
+            if (_scrollViewer == null)
                 return;
             SelectedIndex = ((SelectedIndex - 1) + Items.Count) % Items.Count;
 
+            Transition(SelectedIndex, Orientation);
         }
 
         private void Transition(int index, Orientation orientation)
@@ -115,12 +119,12 @@ namespace MaterialDesignThemes.Wpf
             var container = (FrameworkElement)ItemContainerGenerator.ContainerFromIndex(index);
             if(container == null) return;
 
-            var offset = container.TransformToVisual(_scrollViewer).Transform(new Point(0, 0)).X;
+            var endPosition = (_scrollViewer.HorizontalOffset + ActualWidth) >= (ActualWidth * Items.Count) ? 0 : _scrollViewer.HorizontalOffset + ActualWidth;
 
             var animation = new DoubleAnimation
             {
                 From = _scrollViewer.HorizontalOffset,
-                To = offset + _scrollViewer.HorizontalOffset,
+                To = endPosition,
                 Duration = TimeSpan.FromSeconds(.5),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseInOut },
             };
@@ -135,15 +139,15 @@ namespace MaterialDesignThemes.Wpf
 
         private void TransitionVertically(int index)
         {
-          var container = (FrameworkElement)ItemContainerGenerator.ContainerFromIndex(index);
+            var container = (FrameworkElement)ItemContainerGenerator.ContainerFromIndex(index);
             if(container == null) return;
 
-            var offset = container.TransformToVisual(_scrollViewer).Transform(new Point(0, 0)).Y;
+            var endPosition = (_scrollViewer.VerticalOffset + ActualHeight) >= (ActualHeight * Items.Count) ? 0 : _scrollViewer.VerticalOffset + ActualHeight;
 
             var animation = new DoubleAnimation
             {
                 From = _scrollViewer.VerticalOffset,
-                To = offset + _scrollViewer.VerticalOffset,
+                To = endPosition,
                 Duration = TimeSpan.FromSeconds(.5),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseInOut },
             };
