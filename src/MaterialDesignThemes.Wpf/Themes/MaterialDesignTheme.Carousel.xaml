@@ -14,7 +14,7 @@
     <Setter Property="ItemsPanel">
       <Setter.Value>
         <ItemsPanelTemplate>
-          <StackPanel Orientation="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Orientation, Mode=TwoWay}"/>
+          <StackPanel Orientation="{Binding RelativeSource={RelativeSource AncestorType={x:Type wpf:Carousel}}, Path=Orientation}"/>
         </ItemsPanelTemplate>
       </Setter.Value>
     </Setter>
