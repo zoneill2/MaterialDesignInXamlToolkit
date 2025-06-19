@@ -129,14 +129,16 @@
     </Setter>
   </Style>
 
-
   <Style TargetType="{x:Type wpf:CarouselItem}">
     <Setter Property="Height" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type wpf:Carousel}}, Path=ActualHeight}"/>
     <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type wpf:Carousel}}, Path=ActualWidth}"/>
-    <Setter Property="Content">
+    <Setter Property="ContentTemplate">
       <Setter.Value>
-        <ContentPresenter Content="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Content}"
-                          ContentTemplate="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Content}"/>
+        <DataTemplate>
+            <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type wpf:CarouselItem}}, Path=Stretch}">
+              <ContentPresenter Content="{Binding }"/>
+            </Viewbox>
+        </DataTemplate>
       </Setter.Value>
     </Setter>
   </Style>

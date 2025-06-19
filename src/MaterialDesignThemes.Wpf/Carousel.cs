@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace MaterialDesignThemes.Wpf
@@ -185,6 +186,18 @@ namespace MaterialDesignThemes.Wpf
 
     public class CarouselItem : ContentControl
     {
+        public static readonly DependencyProperty StretchDirectionProperty =
+            DependencyProperty.Register(
+            nameof(Stretch),
+            typeof(Stretch),
+            typeof(CarouselItem),
+            new PropertyMetadata(Stretch.UniformToFill));
+
+        public Stretch Stretch
+        {
+            get => (Stretch)GetValue(StretchDirectionProperty);
+            set => SetValue(StretchDirectionProperty, value);
+        }
         public CarouselItem()
         {
         }

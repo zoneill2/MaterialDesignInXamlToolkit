@@ -597,37 +597,29 @@
       <StackPanel Margin="25,0">
         <TextBlock Text="Horizontal"/>
         <materialDesign:Carousel BorderBrush="{DynamicResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Horizontal">
-          <materialDesign:CarouselItem>
+          <materialDesign:CarouselItem Stretch="None">
             <TextBlock Text="Page 1" Background="LightGreen"/>
           </materialDesign:CarouselItem>
-          <materialDesign:CarouselItem>
-            <StackPanel Background="DeepSkyBlue">
-              <TextBlock Text="Page 2"/>
-            </StackPanel>
+          <materialDesign:CarouselItem Stretch="Uniform">
+            <TextBlock Text="Page 2" Background="DarkOrange"/>
           </materialDesign:CarouselItem>
-          <materialDesign:CarouselItem>
-            <StackPanel Background="Salmon">
-              <TextBlock Text="Page 3"/>
-            </StackPanel>
+          <materialDesign:CarouselItem Stretch="UniformToFill">
+            <TextBlock Text="Page 3" Background="Aqua"/>
           </materialDesign:CarouselItem>
         </materialDesign:Carousel>
       </StackPanel>
 
       <StackPanel Margin="25,0">
         <TextBlock Text="Vertical"/>
-        <materialDesign:Carousel BorderBrush="{StaticResource MaterialDesignDarkForeground}" Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Vertical">
-          <materialDesign:CarouselItem>
+        <materialDesign:Carousel BorderBrush="{StaticResource MaterialDesignDarkForeground}"  Height="200"  BorderThickness="2" IsDefaultButtonVisible="True" Orientation="Vertical">
+          <materialDesign:CarouselItem Stretch="None">
             <TextBlock Text="Page 1" Background="LightGreen"/>
           </materialDesign:CarouselItem>
-          <materialDesign:CarouselItem>
-            <StackPanel Background="DeepSkyBlue">
-              <TextBlock Text="Page 2"/>
-            </StackPanel>
+          <materialDesign:CarouselItem Stretch="Uniform">
+              <TextBlock Text="Page 2" Background="DarkOrange"/>
           </materialDesign:CarouselItem>
-          <materialDesign:CarouselItem>
-            <StackPanel Background="Salmon">
-              <TextBlock Text="Page 3"/>
-            </StackPanel>
+          <materialDesign:CarouselItem Stretch="UniformToFill">
+              <TextBlock Text="Page 3" Background="Aqua"/>
           </materialDesign:CarouselItem>
         </materialDesign:Carousel>
       </StackPanel>
