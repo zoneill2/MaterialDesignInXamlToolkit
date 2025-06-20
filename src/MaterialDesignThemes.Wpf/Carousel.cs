@@ -49,7 +49,7 @@ namespace MaterialDesignThemes.Wpf
         nameof(ButtonForeground),
         typeof(SolidColorBrush),
         typeof(Carousel),
-        new PropertyMetadata(primary));
+        new PropertyMetadata(new SolidColorBrush(new PaletteHelper().GetTheme().PrimaryMid.Color)));
 
         public SolidColorBrush ButtonForeground
         {
