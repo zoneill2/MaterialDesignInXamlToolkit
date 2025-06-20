@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using MaterialDesignColors;
 
 namespace MaterialDesignThemes.Wpf
 {
@@ -14,6 +15,11 @@ namespace MaterialDesignThemes.Wpf
 
         public static readonly RoutedCommand TransitionForwardCommand = new RoutedCommand();
         public static readonly RoutedCommand TransitionBackwardCommand = new RoutedCommand();
+
+        static Carousel()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(Carousel), new FrameworkPropertyMetadata(typeof(Carousel)));
+        }
 
         public Carousel()
         {
@@ -37,6 +43,33 @@ namespace MaterialDesignThemes.Wpf
             get => (Orientation)GetValue(OrientationProperty);
             set => SetValue(OrientationProperty, value);
         }
+
+        public static readonly DependencyProperty ButtonForegroundProperty =
+    DependencyProperty.Register(
+        nameof(ButtonForeground),
+        typeof(SolidColorBrush),
+        typeof(Carousel),
+        new PropertyMetadata(primary));
+
+        public SolidColorBrush ButtonForeground
+        {
+            get => (SolidColorBrush)GetValue(ButtonForegroundProperty);
+            set => SetValue(ButtonForegroundProperty, value);
+        }
+
+        public static readonly DependencyProperty ButtonBackgroundProperty =
+    DependencyProperty.Register(
+        nameof(ButtonBackground),
+        typeof(SolidColorBrush),
+        typeof(Carousel),
+        new PropertyMetadata(Brushes.Transparent));
+
+        public SolidColorBrush ButtonBackground
+        {
+            get => (SolidColorBrush)GetValue(ButtonBackgroundProperty);
+            set => SetValue(ButtonBackgroundProperty, value);
+        }
+
 
         public static readonly DependencyProperty IsDefaultButtonVisibleProperty =
             DependencyProperty.Register(
